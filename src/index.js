@@ -1,17 +1,77 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// index.js
+// importing the react and react-dom package
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import React from 'react'
+import ReactDOM from 'react-dom'
+import doSomeMath from './math.js'
+import Images from './Images/Tasneem.jpg'
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+const headerStyles = {
+  backgroundColor: '#61DBFB',
+  fontFamily: 'Helvetica Neue',
+  padding: 25,
+  lineHeight: 1.5,
+}
+
+// JSX element, header
+const header = (
+  <header style={headerStyles}>
+    <div className='header-wrapper'>
+    <h1>Welcome to 30 Days Of React</h1>
+    <h2>Getting Started React</h2>
+    <h3>JavaScript Library</h3>
+    <p>M Tasneem Arshad</p>
+    <small>Aug 14, 2023</small>
+    </div>
+  </header>
+)
+
+const user = (
+  <div>
+    <img className='image' src={Images} alt='tasneem images' />
+  </div>
+)
+
+// JSX element, main
+const main = (
+  <main>
+    <div className='main-wrapper'>
+    <p>
+      Prerequisite to get started{''}
+      <strong>
+        <em>react.js</em>
+      </strong>
+      :
+      </p>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+    </div>
+  </main>
+)
+
+// JSX element, footer
+const footer = (
+  <footer>
+    <div className='footer-wrapper'>
+      <p>Copyright 2023</p>
+    </div>
+  </footer>
+)
+
+// JSX element, app
+const app = (
+  <div className='app'>
+    {header}
+    {main}
+    {user}
+    {footer}
+  </div>
+)
+
+const rootElement = document.getElementById('root')
+// we render the JSX element using the ReactDOM package
+ReactDOM.render(app, rootElement)
